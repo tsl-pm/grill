@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grill</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1><%= link_to "Starter Grill", root_url %></h1>
+      <nav>
+        <ul>
+          <li><%= link_to 'Menu', menu_url %></li>
+          <li><%= link_to 'Location', location_url %></li>
+          <li><%= link_to 'Reservations', new_reservation_url %></li>
+          <li><%= link_to 'Online Ordering', new_order_url %></li>
+          <li><%= link_to 'Help', help_url %></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <div class="content">
+      <%= yield %>
+    </div>
+    
+    <footer>
+      &copy;2012 The Starter Grill, Inc.  All rights reversed.  Got a comment? Keep it to yourself!
+    </footer>
+  </div>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+.menu_category {
+  clear: both;
+  h2 {
+    margin: 20px 0px;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 4px;
+      span {
+        color: yellow;
+        font-family: 'Trade Winds';
+        padding: 8px;
+        font-size: 32px;
+      }
+  }
+  img { float: left; margin-right: 24px; margin-bottom: 24px;}
+  ul {
+    line-height: 24px;
+    li {
+      margin-bottom: 12px;
+      font-size: 24px;
+      line-height: 29px;
+      span {
+        color: #2EFF2C;
+        background: black;
+        font-size: 24px;
+        margin-right: 12px;
+      }
+      p {
+        color: #CCC;
+        margin-left: 400px;
+        font-style: italic;
+        font-size: 19px;
+      }
+    }
+  }
+}

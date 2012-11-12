@@ -1,0 +1,20 @@
+== StarterGrill
+
+This is an app for a fictitious restaurant.  We'll be using it to learn about:
+
+* Model callbacks
+* Controller filters
+* The difference between user authentication and user authorization
+* Mailers
+* Advanced queries
+* Google maps
+* Sessions
+* User accounts
+
+== Get Started
+
+* Clone this repository and start the app.
+* READ THE CODE.
+* All of the webpages in this app are mockups to give you an idea on how the app should work.
+* Replace the mockups with real, database-backed pages.
+
