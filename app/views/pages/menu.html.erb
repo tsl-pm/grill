@@ -1,0 +1,15 @@
+<% Category.all.each do |category| %>
+  <div class="menu_category">
+    <h2><span><%= category.name %></span></h2>
+    <p><%= image_tag category.photo_filename, size: '328x156' %></p>
+    <ul>
+      <% category.items.each do |item| %>
+        <li>
+          <span>$<%= item.price %></span>
+          <%= item.name %>
+          <p><%= item.description %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
