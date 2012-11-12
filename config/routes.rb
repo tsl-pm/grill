@@ -1,6 +1,8 @@
 Grill::Application.routes.draw do
 
-  root to: 'mockup#home'
+  root to: 'pages#home'
+  
+  get '/mockup/home' => 'mockup#home'
   
   get '/help' => 'mockup#help'
   get "/location" => 'mockup#location', as: 'location'
