@@ -13,6 +13,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    # Change this code so that
+    # only the logged-in user can 
+    # get here.
+    # If they are NOT authorized,
+    # redirect them back to the home page.
     @user = User.find(params[:id])
 
     respond_to do |format|
@@ -48,6 +53,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
+        
         format.html { redirect_to root_url, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
@@ -55,6 +62,7 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PUT /users/1
