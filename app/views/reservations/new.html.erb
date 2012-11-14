@@ -1,0 +1,9 @@
+<h1>New reservation</h1>
+
+<% if session[:user_id] %>
+  <%= render 'form' %>
+<% else %>
+  <h2>Sign Up</h2>
+  <p>To make a reservation here, please <%= link_to "sign up for an account", new_user_url %></p>
+<% end %>
+

@@ -1,5 +1,7 @@
 Grill::Application.routes.draw do
 
+  resources :reservations
+
   get "/login" => 'sessions#new', as: 'login'
   get '/logout' => 'sessions#destroy', as: 'logout'
   

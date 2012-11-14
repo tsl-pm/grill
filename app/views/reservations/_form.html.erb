@@ -1,0 +1,29 @@
+<%= form_for(@reservation) do |f| %>
+  <% if @reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+      <ul>
+      <% @reservation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<!-- Scaffold  -->
+  <div class="field">
+    <%= f.label :booked_for %><br />
+    <%= f.date_select :booked_for %>
+  </div>
+  <div class="field">
+    <%= f.label :party_size %><br />
+    <%= f.select :party_size, 2..20 %>
+  </div>
+  <div class="field">
+    <%= f.label :hour %><br />
+    <%= f.select :hour, [["4PM", "4"], ["5PM", "5"], ["6PM", "6"], ["7PM", "7"]] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

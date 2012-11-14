@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  booked_for: 2012-11-14
+  party_size: 1
+  hour: 1
+
+two:
+  user_id: 1
+  booked_for: 2012-11-14
+  party_size: 1
+  hour: 1
