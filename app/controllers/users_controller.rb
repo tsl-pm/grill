@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+  
+  before_filter :ensure_correct_user, :except => [:new, :create]
+  
+  def ensure_correct_user
+    if session[:user_id] != params[:id].to_i
+      redirect_to root_url
+    end
+  end
+  
   # GET /users
   # GET /users.json
   def index
@@ -13,11 +22,6 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    # Change this code so that
-    # only the logged-in user can 
-    # get here.
-    # If they are NOT authorized,
-    # redirect them back to the home page.
     @user = User.find(params[:id])
 
     respond_to do |format|
@@ -39,6 +43,11 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if session[:user_id] != params[:id].to_i
+      redirect_to root_url
+      return
+    end
+    
     @user = User.find(params[:id])
   end
 
@@ -68,6 +77,11 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
+    if session[:user_id] != params[:id].to_i
+      redirect_to root_url
+      return
+    end
+    
     @user = User.find(params[:id])
 
     respond_to do |format|
