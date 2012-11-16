@@ -1,8 +1,18 @@
 class ReservationsController < ApplicationController
+  
+  before_filter :require_admin, :only => [:index]
+  
+  def require_admin
+    user = User.find_by_id(session[:user_id])
+    if !user.present? || !user.admin
+      redirect_to root_url, :notice => 'Must be admin.'
+    end
+  end
+  
   # GET /reservations
   # GET /reservations.json
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.where(:booked_for => Date.today)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,6 +1,15 @@
 class Reservation < ActiveRecord::Base
   attr_accessible :booked_for, :hour, :party_size, :user_id
   
+  belongs_to :user
+  
+  after_create :add_loyalty_points
+  
+  def add_loyalty_points
+    self.user.points += self.party_size * 10
+    self.user.save
+  end
+
   
   validate :no_more_than_thirty_seats_filled_at_a_time
   

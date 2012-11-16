@@ -13,7 +13,7 @@
 
 <% @reservations.each do |reservation| %>
   <tr>
-    <td><%= reservation.user_id %></td>
+    <td><%= reservation.user.name %></td>
     <td><%= reservation.booked_for %></td>
     <td><%= reservation.party_size %></td>
     <td><%= reservation.hour %></td>
