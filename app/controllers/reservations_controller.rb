@@ -12,6 +12,7 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
+    # TODO: Limit to 10 per page
     @reservations = Reservation.where(:booked_for => Date.today)
 
     respond_to do |format|

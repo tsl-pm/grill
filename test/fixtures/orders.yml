@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  paid: false
+
+two:
+  user_id: 1
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  paid: false

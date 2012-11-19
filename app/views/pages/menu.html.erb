@@ -8,6 +8,9 @@
           <span>$<%= item.price %></span>
           <%= item.name %>
           <p><%= item.description %></p>
+          <% if logged_in? %>
+            <p><%= link_to "Add to Order", new_order_item_url(item_id: item.id) %></p>
+          <% end %>
         </li>
       <% end %>
     </ul>
