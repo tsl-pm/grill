@@ -9,11 +9,11 @@ class ReservationsController < ApplicationController
     end
   end
   
-  # GET /reservations
+  # GET /reservations?page=2
   # GET /reservations.json
   def index
-    # TODO: Limit to 10 per page
-    @reservations = Reservation.where(:booked_for => Date.today)
+    # TODO: Limit to 3 per page
+    @reservations = Reservation.page(params[:page]).per(3)
 
     respond_to do |format|
       format.html # index.html.erb

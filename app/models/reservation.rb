@@ -6,6 +6,17 @@ class Reservation < ActiveRecord::Base
   after_create :add_loyalty_points
   before_destroy :remove_loyalty_points
   
+  # def user
+  #   # if @user.nil?
+  #   #   @user = User.find_by_id(self.user_id)
+  #   # end
+  #   # 
+  #   # return @user
+  #   
+  #   @user ||= User.find_by_id(self.user_id)
+  #   
+  # end
+  
   def add_loyalty_points
     self.user.points += self.party_size * 10
     self.user.save
