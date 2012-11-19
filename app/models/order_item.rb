@@ -2,6 +2,7 @@ class OrderItem < ActiveRecord::Base
   attr_accessible :item_id, :note, :order_id, :qty
   
   belongs_to :item
+  belongs_to :order
   
   validates_presence_of :item_id
   validates_presence_of :order_id

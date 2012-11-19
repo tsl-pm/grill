@@ -36,6 +36,10 @@ class OrderItemsController < ApplicationController
   # GET /order_items/new.json
   def new
     @order_item = @order.order_items.build(item_id: params[:item_id])
+    # @order_items.item_id # => 1
+    
+    # @order_item = OrderItem.new(:order_id => @order.id, 
+    #                             :item_id => params[:item_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -53,8 +57,9 @@ class OrderItemsController < ApplicationController
   def create
     # TODO: Associate the current order to the @order_item
     # TODO: Associate the customer's desired menu item to the @order_item
-    @order_item = OrderItem.new(params[:order_item])
-
+    @order_item = OrderItem.new(params[:order_item])  
+    @order_item.order = @order
+    
     respond_to do |format|
       if @order_item.save
         format.html { redirect_to menu_url, notice: 'Item added to cart!' }
