@@ -62,6 +62,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+
         session[:user_id] = @user.id
         session[:order_id] = @user.orders.create.id
         

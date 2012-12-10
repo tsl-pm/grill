@@ -55,8 +55,6 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
-    # TODO: Associate the current order to the @order_item
-    # TODO: Associate the customer's desired menu item to the @order_item
     @order_item = OrderItem.new(params[:order_item])  
     @order_item.order = @order
     

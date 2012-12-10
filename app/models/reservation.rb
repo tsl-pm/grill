@@ -5,6 +5,13 @@ class Reservation < ActiveRecord::Base
   
   after_create :add_loyalty_points
   before_destroy :remove_loyalty_points
+
+  after_create :send_email
+  
+  def send_email
+    email = ReservationMailer.confirm(self)
+    email.deliver
+  end
   
   # def user
   #   # if @user.nil?
